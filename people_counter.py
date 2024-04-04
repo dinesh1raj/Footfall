@@ -82,7 +82,7 @@ def people_counter():
 
 	# otherwise, grab a reference to the video file
 	else:
-		logger.info("Starting the video..")
+		#logger.info("Starting the video..")
 		vs = cv2.VideoCapture(args["input"])
 
 	# initialize the video writer (we'll instantiate later if need be)
@@ -329,11 +329,11 @@ def people_counter():
 			writer.write(frame)
 
 		# show the output frame
-		cv2.imshow("Real-Time Monitoring/Analysis Window", frame)
-		key = cv2.waitKey(1) & 0xFF
+		#cv2.imshow("Real-Time Monitoring/Analysis Window", frame)
+		#key = cv2.waitKey(1) & 0xFF
 		# if the `q` key was pressed, break from the loop
-		if key == ord("q"):
-			break
+		#if key == ord("q"):
+			#break
 		# increment the total number of frames processed thus far and
 		# then update the FPS counter
 		totalFrames += 1
@@ -349,8 +349,9 @@ def people_counter():
 
 	# stop the timer and display FPS information
 	fps.stop()
-	logger.info("Elapsed time: {:.2f}".format(fps.elapsed()))
-	logger.info("Approx. FPS: {:.2f}".format(fps.fps()))
+	#logger.info("Elapsed time: {:.2f}".format(fps.elapsed()))
+	#logger.info("Approx. FPS: {:.2f}".format(fps.fps()))
+	print(totalUp)
 
 	# release the camera device/resource (issue 15)
 	if config["Thread"]:
